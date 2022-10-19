@@ -2,9 +2,10 @@
 
 /**
  * _abs - print the absolute value of an integer
- * @abs: parameter to modify
+ * @m: parameter to be computed
  * Return: The absolute value
  */
+
 int _abs(int m)
 {
 	if (m >= 0)
