@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - prints the numbers 1 to 100: Fizzbuzz
+ * main - prints the numbers 1 to 100 and Fizzbuzz
  *
  * Return:0
  */
@@ -15,13 +15,13 @@ int main(void)
 	{
 		if (j % 3 == 0 && j % 5 != 0)
 		{
-			printf("Fizz");
+			printf(" Fizz");
 		} else if (j % 5 == 0 && j % 3 != 0)
 		{
-			printf("Buzz");
+			printf(" Buzz");
 		} else if (j % 3 == 0 && j % 5 == 0)
 		{
-			printf("FizzBuzz");
+			printf(" FizzBuzz");
 		} else if (j == 1)
 		{
 			printf("%d", j);
