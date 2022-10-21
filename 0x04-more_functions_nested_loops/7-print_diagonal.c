@@ -17,9 +17,11 @@ void print_diagonal(int n)
 		{
 			for (t = 0; t < n; t++)
 			{
-				_putchar(' ');
+				if (t == u)
+					_putchar('\\');
+				else if (t < u)
+					_putchar(' ');
 			}
-			_putchar('\\');
 			_putchar('\n');
 		}
 	}
