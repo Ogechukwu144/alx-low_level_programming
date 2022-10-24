@@ -12,12 +12,12 @@ void print_rev(char *s)
 	int rev = 0;
 
 	/*first find the length of string*/
-	while (s[rev] != '0')
+	while (s[rev] != '\0')
 	{
 		rev++;
 	}
 
-	/*then print in reverse from the last char as you decrease*/
+	/*print in reverse*/
 	for (rev = rev - 1; rev >= 0; rev--)
 	{
 		_putchar(s[rev]);
