@@ -3,42 +3,39 @@
 /**
  * cap_string - capitalizes every first letter of a word in a string
  * separators of words:  space, tabulation, new line, and
- * @c: String
+ * @strg: String
  *
- * Return: pointer to c
+ * Return: pointer to string
  */
 
-char *cap_string(char *c)
+char *cap_string(char *strg)
 {
-	int k;
-	char l;
+	int j = 0;
 
-	k = 0;
-	l '\0';
-
-	while (c[k])
+	while (strg[j])
 	{
-		if (k > 0)
+		while (!(strg[j] >= 'a' && strg[j] <= 'z'))
+			j++;
 		{
-			l = c[k - 1];
+		if (strg[j - 1] == ' ' ||
+			strg[j - 1] == '\t' ||
+			strg[j - 1] == '\n' || 
+			strg[j - 1] == ',' ||
+			strg[j - 1] == ';' ||
+			strg[j - 1] == '.' ||
+			strg[j - 1] == '!' ||
+			strg[j - 1] == '?' ||
+			strg[j - 1] == '"' ||
+			strg[j - 1] == '(' ||
+			strg[j - 1] == ')' ||
+			strg[j - 1] == '{' ||
+			strg[j - 1] == '}' || j == 0)
+			
+				strg[j] -= 32;
 		}
-		if (c[k] >= 'a' && c[k] <= 'z')
-		{
-			if (l == '\n' || l == ' ' || l == ',' || l == '!')
-			{
-				c[k] = c[k] - 32;
-			}
-			else if  (l == ';' || l == '\t' || l == '{' || l == '}')
-			{
-				c[k] = c[k] - 32;
-			}
-			else if (l == ')' || l == '(' || l == '.' || k == 0)
-			{
-				c[k] = c[k] - 32;
-			}
-		}
-
-		k++;
+		j++;
 	}
-	return (&p[0]);
+
+	return (strg);
 }
+
