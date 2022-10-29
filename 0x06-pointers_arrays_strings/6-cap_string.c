@@ -23,7 +23,7 @@ char *cap_string(char *str)
 			if (str[p] == separators[j])
 			{
 				if ((str[p + 1] >= 'a') && (str[p + 1] <= 122))
-					str[p + 1] + str[p + 1] - 32;
+					str[p + 1] = str[p + 1] - 32;
 				break;
 			}
 		}
