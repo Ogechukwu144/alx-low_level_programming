@@ -1,41 +1,33 @@
 #include "main.h"
 
 /**
- * cap_string - capitalizes every first letter of a word in a string
- * separators of words:  space, tabulation, new line, and
- * @strg: String
+ * cap_string - capitalises all words of a string
+ * @str: string
  *
  * Return: pointer to string
  */
 
-char *cap_string(char *strg)
+char *cap_string(char *str)
 {
-	int j = 0;
+	int p = 0, j;
 
-	while (strg[j])
+	int separators[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+
+	if ((str[p] > 97 && (str[p]) <= 122))
+		str[p] = str[p] - 32;
+	p++;
+	while (str[p] != '\0')
 	{
-		while (!(strg[j] >= 'a' && strg[j] <= 'z'))
-			j++;
+		for (j = 0; j < 13; j++)
 		{
-		if (strg[j - 1] == ' ' ||
-			strg[j - 1] == '\t' ||
-			strg[j - 1] == '\n' || 
-			strg[j - 1] == ',' ||
-			strg[j - 1] == ';' ||
-			strg[j - 1] == '.' ||
-			strg[j - 1] == '!' ||
-			strg[j - 1] == '?' ||
-			strg[j - 1] == '"' ||
-			strg[j - 1] == '(' ||
-			strg[j - 1] == ')' ||
-			strg[j - 1] == '{' ||
-			strg[j - 1] == '}' || j == 0)
-			
-				strg[j] -= 32;
+			if (str[p] == separators[j])
+			{
+				if ((str[p + 1] >= 97) && (str[p + 1] <= 122))
+					str[p + 1] + str[p + 1] - 32;
+				break;
+			}
 		}
-		j++;
+		p++;
 	}
-
-	return (strg);
+	return (str);
 }
-
