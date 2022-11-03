@@ -9,14 +9,13 @@
 
 void _puts_recursion(char *s)
 {
-	if (*s != '\0')
+	if (*s != '\0') /*if s != null terminator keep going*/
 	{
 		_puts_recursion(s + 1);
 		_putchar(*s);
 	}
 }
 
-int main(void)
 {
 	char s[] = "Puts with recursion";
 
