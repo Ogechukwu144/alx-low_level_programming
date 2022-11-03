@@ -17,7 +17,7 @@ int _strlen_recursion(char *s)
 
 
 /**
- * checkpalindrome - checks each character of the string for palindrome
+ * checkPalindrome - checks each character of the string for palindrome
  * @s: string to be checked
  * @i: iterator
  * @len: length of string
