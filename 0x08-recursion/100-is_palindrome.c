@@ -1,20 +1,19 @@
 #include "main.h"
 
+int checkPalindrome(char *s, int i, int len);
+
 /**
  * _strlen_recursion - returns the length of a string
  * Firstly, we need to check the length of the string
  * @s: String
  * Return: length of a string.
  */
-
 int _strlen_recursion(char *s)
 {
 	if (*s == '\0')
 		return (0);
-	else
-		return (1 + _strlen_recursion(s + 1));
+	return (1 + _strlen_recursion(s + 1));
 }
-
 
 /**
  * checkPalindrome - checks each character of the string for palindrome
@@ -31,7 +30,6 @@ int checkPalindrome(char *s, int i, int len)
 		return (1);
 	return (checkPalindrome(s, i + 1, len - 1));
 }
-
 
 /**
  * is_palindrome - checks if a string is a palindrome
