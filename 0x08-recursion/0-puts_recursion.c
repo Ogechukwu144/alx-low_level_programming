@@ -9,16 +9,17 @@
 
 void _puts_recursion(char *s)
 {
-	if (*s != '\0)
+	if (*s != '\0')
 	{
 		_puts_recursion(s + 1);
-		_putchar("%c", *s);
+		_putchar(*s);
 	}
 }
 
 int main(void)
 {
-	char s[];
+	char s[] = "Puts with recursion";
+
 	_puts_recursion(s);
 	_putchar('\n');
 
