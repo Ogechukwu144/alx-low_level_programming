@@ -1,26 +1,12 @@
 #include "main.h"
 
-int checkPalindrome(char *s, int i, int len);
-int _strlen_recursion(char *s);
-
-/**
- * is_palindrome - checks if a string is palindrome
- * @s: string to reverse
- * Return: 1 if a palindrome, 0 if otherwise.
- */
-int is_palindrome(char *s)
-{
-	if (*s == 0)
-		return (1);
-	return (checkPalindrome(s, 0, _strlen_recursion(s)));
-}
-
 /**
  * _strlen_recursion - returns the length of a string
  * Firstly, we need to check the length of the string
  * @s: String
  * Return: length of a string.
  */
+
 int _strlen_recursion(char *s)
 {
 	if (*s == '\0')
@@ -37,9 +23,23 @@ int _strlen_recursion(char *s)
  */
 int checkPalindrome(char *s, int i, int len)
 {
-	if (*(s + 1) != *(s + len - 1))
+	if (*(s + i) != *(s + len - i))
 		return (0);
 	if (i >= len)
 		return (1);
 	return (checkPalindrome(s, i + 1, len - 1));
+}
+
+/**
+ * is_palindrome - checks if a string is palindrome
+ * @s: string
+ *
+ * Return: 1 if a palindrome, 0 if otherwise.
+ */
+
+int is_palindrome(char *s)
+{
+	if (*s == 0)
+		return (1);
+	return (checkPalindrome(s, 0, _strlen_recursion(s)));
 }
