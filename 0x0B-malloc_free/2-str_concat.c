@@ -6,13 +6,13 @@
  * @s1: first string
  * @s2: second string
  *
- * Return: NULL on failure, pointer to the new string on success.
+ * Return: pointer to the new string on success, else NULL on error
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	char *s3;
 	unsigned int a, b, c, len;
+	char *s3;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -26,11 +26,10 @@ char *str_concat(char *s1, char *s2)
 		;
 
 	s3 = malloc(sizeof(char) * (a + b + 1));
-	{
+
 	if (s3 == NULL)
 		free(s3);
-		return (NULL);
-	}
+	return (NULL);
 
 	for (c = 0; c < a; c++)
 		s3[c] = s1[c];
