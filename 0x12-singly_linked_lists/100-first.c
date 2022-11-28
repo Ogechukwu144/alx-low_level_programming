@@ -1,6 +1,6 @@
 #include "stdio.h"
 
-void print_something(void) __attribute__ ((constructor));
+void print_statement(void) __attribute__ ((constructor));
 
 /**
  * print_statement - prints a statement before main function
