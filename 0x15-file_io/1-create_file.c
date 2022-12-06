@@ -9,53 +9,21 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	ssize_t w;
-	int size;
-	char *mem;
+	int fdo, fdw, len = 0;
 
-	if (!filename)
+	if (filename == NULL)
 		return (-1);
 
-	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
-	if (fd == -1)
-		return (-1);
-	if (!text_content)
-		close(fd);
-		return (1);
-
-	size = _strlen(text_content);
-	mem = malloc(sizeof(char) * size);
-	if (!mem)
-		close(fd);
+	fdo = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+	if (fdo < 0)
 		return (-1);
 
-	w = write(fd, text_content, size);
-	if (w == -1)
-		close(fd);
-		free(mem);
-		return (-1);
+	while (text_content && *(text_content + len))
+		len++;
 
-	close(fd);
-	free(mem);
+	fdw = write(fdo, text_content, len);
+	close(fdo);
+	if (fdw < 0)
+		return (-1);
 	return (1);
-}
-
-/**
- * _strlen - len
- *
- * @s: is a pointer to a char
- *
- * Return: Always 0.
- */
-
-int _strlen(const char *s)
-{
-	int i = 0;
-
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
-	return (i);
 }
